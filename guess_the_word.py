@@ -17,8 +17,8 @@ def hangman():
     word = random.choice(word_list)
     word_length = len(word)
     
-    # create a strnig of underscores the same length of the word to be guessed
-    # this is to show the player how many letters there are and serve as placeholders
+    # Create a string of underscores the same length of the word to be guessed
+    # This is to show the player how many letters there are and serve as placeholders
     guessed_word = ['_'] * word_length
     
     # Number of incorrect guesses allowed
@@ -27,7 +27,7 @@ def hangman():
     # List to track letters already guessed 
     guessed_letters = []  
     
-    # print statments to set up and explain game to player
+    # Print statments to set up and explain game to player
     print("Welcome to GUESS THE WORD!!!")
     print("These words are things you can find in a house.")
     print(f"Guess the word: {' '.join(guessed_word)}")
@@ -43,7 +43,7 @@ def hangman():
             print("Please enter a single valid letter.")
             continue
         
-        # This checks to make sure player has not guess that letter more than once.
+        # This checks to make sure player has not guessed that letter more than once.
         if guess in guessed_letters:
             print("You've already guessed that letter. Try again.")
             continue
@@ -77,6 +77,6 @@ def hangman():
     if attempts == 0:
         print(f"Game Over! The word was: {word}")
 
-# Start the game
-hangman()
-
+# Added so it wont run when called by the test program.
+if __name__ == '__main__':
+    hangman()
